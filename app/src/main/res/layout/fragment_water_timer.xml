@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="waterTimerViewModel"
+            type="com.burcutopcu.waterreminder.ui.WaterTimerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.WaterTimerFragment">
+
+    <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            elapsedTime="@{waterTimerViewModel.elapsedTime}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/minutes_spinner" />
+
+        <Spinner
+            android:id="@+id/minutes_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:entries="@array/water_array"
+            android:prompt="@string/water_prompt"
+            android:onItemSelected="@{(parent, view, selection, id)-> waterTimerViewModel.setTimeSelected(selection)}"
+            android:selectedItemPosition="@{waterTimerViewModel.timeSelection}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/on_off_switch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="8dp" />
+
+        <Switch
+            android:id="@+id/on_off_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:checked="@{waterTimerViewModel.isAlarmOn}"
+            android:onCheckedChanged="@{(button, on)-> waterTimerViewModel.setAlarm(on)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/minutes_spinner"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="32dp" />
+
+        <ImageView
+            android:id="@+id/egg_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Water"
+            app:layout_constraintBottom_toTopOf="@id/minutes_spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/full_water"
+            tools:srcCompat="@drawable/full_water" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

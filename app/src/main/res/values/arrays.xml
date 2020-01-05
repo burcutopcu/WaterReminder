@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Text values of cooking time intervals -->
+    <string-array name="water_array">
+        <item>Please select time</item>
+        <item>Very Often</item>
+        <item>Often</item>
+        <item>Rearly</item>
+        <item>Much More Rearly</item>
+    </string-array>
+    <!--Cooking time intervals in minutes -->
+    <integer-array name="minutes_array">
+        <item>0</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </integer-array>
+</resources>

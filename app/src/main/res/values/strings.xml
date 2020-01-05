@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">WaterReminder</string>
+
+    <string name="water_prompt">How often do you want to drink water?</string>
+    <string name="timer_on">Start</string>
+    <string name="timer_off">Stop</string>
+    <string name="notification_title">Water Timer</string>
+    <string name="notification_text">It is time to drink water!!</string>
+
+    <string name="fcm_message">FCM Message</string>
+    <string name="message_subscribe_failed">Failed to subscribe to topic</string>
+    <string name="message_subscribed">Subscribed to topic</string>
+    <string name="water_notification_channel_id" translatable="false">water_channel</string>
+    <string name="water_notification_channel_name" translatable="true">Water</string>
+    <string name="time_to_drink_water">It is time to drink water!!</string>
+    <string name="timer_running">Water timer is running...</string>
+    <string name="water_notification_channel_description">Water reminder</string>
+    <string name="snooze">Snooze</string>
+
+</resources>
